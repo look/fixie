@@ -64,9 +64,9 @@ all existing records.
 
 == Feedback
 
-This is a work in progress. I am currently using it as I feel it's
-better than the ad hoc scripts I've been using it, but I am eager to
-hear your suggestions on how to improve this library.
+This is a work in progress. I am currently using Fixie as I feel it's
+better than the ad hoc scripts I used before, but I am eager to hear
+your suggestions on how to improve this library.
 
 Some ideas I have:
 
