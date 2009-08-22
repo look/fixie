@@ -40,21 +40,30 @@ Records created in this way are returned for use later in the population script:
 
     admin = Role.fixie(:admin, :name => 'admin')
 
-    sam = Person.fixie(:sam, :name => "Sam", :email => "sam@example.com")
+    sam = Person.fixie(:sam, :name => "Sam Smith", :email => "sam@example.com")
     sam.roles << admin
+
+If you have a <tt>belongs_to</tt> association, you can also associate objects like this:
+
+    schwinn = Manufacturer.fixie(:schwinn, :name => 'Schwinn Bicycle Company', :founded => 1895)
+
+    continental = Bicycle.fixie(:continental, :name => 'Continental', :speeds => 10, :manufacturer => schwinn)
+
+This works because Fixie sends <tt>attr=</tt> to the object being
+created, so ActiveRecord associates the parent object with the child.
 
 Invalid records will raise an exception and your tests will not run.
 
-You may have as may fixture files as you like so organize the test data however it makes sense.
+You may have as may fixie files as you like, so organize the test data however it makes sense.
 
 In tests, you can look up that record like this:
 
-    Fixie.person(:sam)
+   @sam = Fixie.people(:sam)
 
 If the object with that record ID doesn't exist, an exception will be raised.
 
 Your test database will be populated with records before the tests
-run. This is accomplished by appending to the +db:test:prepare+ task and
+run. This is accomplished by appending to the <tt>db:test:prepare</tt> task and
 inserting the records into the test database by loading the fixture
 files.
 
