@@ -32,7 +32,7 @@ needed.
 
 == Usage
 
-In <tt>test/fixie directory</tt>, create an <tt>*.rb</tt> file to populate the database:
+In the <tt>test/fixie directory</tt>, create an <tt>*.rb</tt> file to populate the database:
 
     Foobar.fixie(:record_name, :name => "my record", :email => "test@example.com")
 
@@ -63,9 +63,9 @@ In tests, you can look up that record like this:
 If the object with that record ID doesn't exist, an exception will be raised.
 
 Your test database will be populated with records before the tests
-run. This is accomplished by appending to the <tt>db:test:prepare</tt> task and
-inserting the records into the test database by loading the fixture
-files.
+run. This is accomplished by appending to the <tt>db:test:prepare</tt>
+task and inserting the records into the test database by loading the
+fixie files.
 
 <b>NOTE:</b> creating a test database in NOT compatible with using fixtures
 (at least not for the same tables), because loading fixtures deletes
@@ -82,6 +82,5 @@ Some ideas I have:
 * allow use of the fixture or fixture-style methods (like <tt>bicycles(:foobar)</tt>)
 * change the lookup method to be <tt>ClassName.fixie(:record_name)</tt>
 * don't polute <tt>ActiveRecord::Base</tt> with the +fixie+ method except in tests?
-* create <tt>test/fixie</tt> if it doesn't exist when the plugin is installed
 
 Copyright (c) 2009 Luke Francl, released under the MIT license.
