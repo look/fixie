@@ -47,7 +47,7 @@ If you have a <tt>belongs_to</tt> association, you can also associate objects li
 
     schwinn = Manufacturer.fixie(:schwinn, :name => 'Schwinn Bicycle Company', :founded => 1895)
 
-    continental = Bicycle.fixie(:continental, :name => 'Continental', :speeds => 10, :manufacturer => schwinn)
+    continental = Bicycle.fixie(:continental, :name => 'Continental', :speeds => 10, :brakes => true, :manufacturer => schwinn)
 
 This works because Fixie sends <tt>attr=</tt> to the object being
 created, so ActiveRecord associates the parent object with the child.
@@ -66,6 +66,9 @@ Your test database will be populated with records before the tests
 run. This is accomplished by appending to the <tt>db:test:prepare</tt>
 task and inserting the records into the test database by loading the
 fixie files.
+
+That's about all there is to it, but you can check out the +examples+
+directory for a closer look at how to use Fixie.
 
 <b>NOTE:</b> creating a test database in NOT compatible with using fixtures
 (at least not for the same tables), because loading fixtures deletes
