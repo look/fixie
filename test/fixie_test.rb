@@ -26,4 +26,16 @@ class FixieTest < ActiveSupport::TestCase
       Fixie.bicycles(:non_existant)
     end
   end
+
+  test "belongs_to associations should be assigned" do
+    schwinn = Manufacturer.fixie(:schwinn, :name => 'Schwinn Bicycle Company', :founded => 1895)
+
+    paramount = Bicycle.fixie(:paramount,
+                              :name => 'Paramount',
+                              :speeds => 15,
+                              :brakes => true,
+                              :manufacturer => schwinn)
+
+    assert_equal schwinn, paramount.manufacturer
+  end
 end

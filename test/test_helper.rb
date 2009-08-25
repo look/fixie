@@ -11,6 +11,7 @@ ActiveRecord::Base.establish_connection({ :adapter => 'sqlite3',
 
 require 'schema'
 require 'bicycle'
+require 'manufacturer'
 
 require 'fixie'
 
