@@ -74,6 +74,11 @@ directory for a closer look at how to use Fixie.
 (at least not for the same tables), because loading fixtures deletes
 all existing records.
 
+<b>GENERATOR NOTE:</b> If you do happen create a model via a rails
+generator, you'll get a file in the text/fixtures directory which will
+override any Fixie you've set up. So you'll need to remove that file
+for Fixie to work.
+
 == Feedback
 
 This is a work in progress. I am currently using Fixie as I feel it's
